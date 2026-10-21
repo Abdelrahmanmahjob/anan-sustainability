@@ -11,6 +11,59 @@
     "secondaryCta": "Explore our services",
     "caption": "Built for business. Designed for long-term impact."
   },
+  "services": {
+    "eyebrow": "What we build",
+    "title": "Digital tools built around the way your business works.",
+    "description": "From connected workflows to clearer sustainability data, we build practical software that helps your team move forward with confidence.",
+    "cards": {
+      "workflows": {
+        "title": "Workflow",
+        "description": "Connecting design, code, and delivery seamlessly."
+      },
+      "platforms": {
+        "title": "Our Tech Ecosystem",
+        "description": "Powering innovation through modern frameworks."
+      },
+      "data": {
+        "title": "AI Solutions",
+        "description": "Smart tools that automate and enhance digital workflows."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Actionable insights from real-time data."
+      },
+      "reporting": {
+        "title": "Design",
+        "description": "Human-centered and visually engaging experiences."
+      }
+    },
+    "visual": {
+      "tagNew": "New",
+      "tagReviewed": "Reviewed",
+      "notifications": {
+        "first": {
+          "title": "2 Models Updated",
+          "time": "Today, 14:00"
+        },
+        "second": {
+          "title": "Design System Synced",
+          "time": "Today, 11:20"
+        },
+        "third": {
+          "title": "Release Shipped",
+          "time": "Yesterday, 18:45"
+        }
+      },
+      "ai": "AI",
+      "design": {
+        "title": "Title Here",
+        "description": "Alert description with auto layout!",
+        "note": "Spacing and wrapping adapt instantly.",
+        "defaultAction": "Default",
+        "boldAction": "Bold"
+      }
+    }
+  },
   "common": {
     "skipToContent": "Skip to content",
     "loading": "Loading"
