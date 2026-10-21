@@ -1,0 +1,42 @@
+{
+  "brand": {
+    "name": "عنان",
+    "descriptor": "للاستدامة"
+  },
+  "hero": {
+    "eyebrow": "حلول رقمية للاستدامة",
+    "title": "نبني لك حلول تخلي <accent>الاستدامة أسهل</accent> في شغلك.",
+    "description": "نطوّر أدوات تساعد منشأتك تنظّم بياناتها، تتابع أثرها، وتاخذ قرارات أوضح بثقة.",
+    "primaryCta": "خلنا نتكلم",
+    "secondaryCta": "تعرّف على خدماتنا",
+    "caption": "حلول أعمال لأثر يدوم"
+  },
+  "common": {
+    "skipToContent": "تخطّي إلى المحتوى",
+    "loading": "جاري التحميل"
+  },
+  "navigation": {
+    "companyName": "عنان للاستدامة",
+    "mainNavigation": "القائمة الرئيسية",
+    "home": "الرئيسية",
+    "services": "خدماتنا",
+    "features": "مميزاتنا",
+    "howWeWork": "كيف نشتغل",
+    "contact": "تواصل معنا",
+    "menu": "القائمة",
+    "close": "إغلاق",
+    "openMenu": "افتح قائمة التنقل",
+    "closeMenu": "أغلق قائمة التنقل",
+    "switchLanguageToArabic": "غيّر اللغة إلى العربية",
+    "switchLanguageToEnglish": "غيّر اللغة إلى الإنجليزية"
+  },
+  "errors": {
+    "generic": "صار خطأ. حاول مرة ثانية.",
+    "retry": "حاول مرة ثانية",
+    "notFound": "ما قدرنا نلقى الصفحة."
+  },
+  "metadata": {
+    "title": "عنان للاستدامة",
+    "description": "حلول SaaS تساعد الشركات تبني مستقبل أكثر استدامة."
+  }
+}

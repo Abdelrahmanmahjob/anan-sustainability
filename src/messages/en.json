@@ -1,0 +1,42 @@
+{
+  "brand": {
+    "name": "Anan",
+    "descriptor": "Sustainability"
+  },
+  "hero": {
+    "eyebrow": "Digital solutions for sustainability",
+    "title": "Make <accent>sustainability work</accent> for your business.",
+    "description": "We build practical digital tools to help your organization track its impact, manage sustainability data, and make clearer decisions with confidence.",
+    "primaryCta": "Talk to our team",
+    "secondaryCta": "Explore our services",
+    "caption": "Built for business. Designed for long-term impact."
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "loading": "Loading"
+  },
+  "navigation": {
+    "companyName": "Anan Sustainability",
+    "mainNavigation": "Main navigation",
+    "home": "Home",
+    "services": "Services",
+    "features": "Features",
+    "howWeWork": "How we work",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "switchLanguageToArabic": "Switch language to Arabic",
+    "switchLanguageToEnglish": "Switch language to English"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "retry": "Try again",
+    "notFound": "This page could not be found."
+  },
+  "metadata": {
+    "title": "Anan Sustainability",
+    "description": "SaaS solutions for businesses building a more sustainable future."
+  }
+}
