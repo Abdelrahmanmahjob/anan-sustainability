@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { cairo, geist, geistMono, spaceGrotesk } from "@/app/fonts";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { StripedPattern } from "@/components/magicui/striped-pattern";
 import "../globals.css";
 
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
               </a>
               <Navbar />
               {children}
+              <Footer />
             </div>
           </div>
         </NextIntlClientProvider>

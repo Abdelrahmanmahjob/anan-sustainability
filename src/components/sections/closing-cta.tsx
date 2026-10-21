@@ -292,7 +292,7 @@ export function ClosingCta() {
           reduceMotion ? { duration: 0 } : { duration: 0.8, ease: EASE }
         }
         // inset shadows = the hollowed-out cavity
-        className="relative isolate flex min-h-[25rem] flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-outline-variant/60 bg-[linear-gradient(112deg,color-mix(in_srgb,var(--color-carbon-surface)_98%,transparent),color-mix(in_srgb,var(--color-surface-container-high)_92%,transparent))] px-lg py-3xl text-center shadow-[inset_0_14px_60px_rgb(0_0_0_/_0.55),inset_0_-1px_0_rgb(255_255_255_/_0.05),0_25px_50px_-12px_rgb(0_0_0_/_0.5)] sm:min-h-[28rem] sm:rounded-[2.5rem] sm:px-3xl"
+        className="relative isolate flex min-h-[25rem] flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-outline-variant/60 bg-[linear-gradient(112deg,color-mix(in_srgb,var(--color-carbon-surface)_98%,transparent),color-mix(in_srgb,var(--color-surface-container-high)_92%,transparent))] px-lg py-3xl text-center shadow-[inset_0_30px_70px_rgb(0_0_0_/_0.55),inset_0_-1px_0_rgb(255_255_255_/_0.05),0_25px_50px_-12px_rgb(0_0_0_/_0.5)] sm:min-h-[28rem] sm:rounded-[2.5rem] sm:px-3xl"
       >
         {/* Breathing emerald glow */}
         <motion.div

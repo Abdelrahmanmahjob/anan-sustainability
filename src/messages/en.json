@@ -172,7 +172,32 @@
     "title": "Let’s make sustainability work for you.",
     "description": "Bring us your challenge. Together, we’ll find a practical way forward for your business.",
     "primaryCta": "Start a conversation",
-    "secondaryCta": "Explore our services"
+    "secondaryCta": "Explore our services",
+    "hint": "Drag the orbs"
+  },
+  "footer": {
+    "brandHome": "Anan Sustainability home",
+    "description": "Practical digital solutions that help businesses move sustainability forward.",
+    "tagline": "Built for business. Designed for lasting impact.",
+    "columns": {
+      "company": "Company",
+      "connect": "Connect",
+      "explore": "Explore"
+    },
+    "links": {
+      "home": "Home",
+      "services": "Services",
+      "howWeWork": "How we work",
+      "contact": "Contact us",
+      "faq": "Frequently asked questions",
+      "startConversation": "Start a conversation",
+      "features": "Features",
+      "sustainability": "Sustainability",
+      "ourApproach": "Our approach"
+    },
+    "copyright": "© Anan Sustainability. All rights reserved.",
+    "backToTop": "Back to top",
+    "social": { "linkedin": "LinkedIn" }
   },
   "faq": {
     "eyebrow": "Quick answers",
