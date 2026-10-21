@@ -167,6 +167,40 @@
       }
     }
   },
+  "faq": {
+    "eyebrow": "Quick answers",
+    "title": "Frequently asked questions",
+    "description": "A few things teams often ask before getting started with Anan.",
+    "listLabel": "Frequently asked questions",
+    "items": {
+      "solutions": {
+        "question": "What does Anan Sustainability build?",
+        "answer": "We build practical digital products and SaaS solutions that help organizations manage sustainability work, make sense of their data, and improve day-to-day business processes."
+      },
+      "fit": {
+        "question": "Who are your solutions designed for?",
+        "answer": "We work with businesses and teams looking to make sustainability more manageable through useful digital tools. We start by learning about your organization, goals, and existing workflows."
+      },
+      "gettingStarted": {
+        "question": "How do we get started?",
+        "answer": "It starts with a conversation. We learn about the challenge you want to solve, discuss the people and systems involved, and agree on clear next steps before any work begins."
+      },
+      "customization": {
+        "question": "Can a solution be tailored to our needs?",
+        "answer": "We shape the approach around your goals and requirements. After learning about your needs, we’ll explain which parts can be configured or tailored and agree on the right scope together."
+      },
+      "data": {
+        "question": "How do you handle our data and security requirements?",
+        "answer": "We discuss your data, privacy, and security requirements during discovery, then clarify how they apply to the proposed solution. Specific controls and responsibilities are agreed before implementation."
+      },
+      "timing": {
+        "question": "How long does a project take, and what does it cost?",
+        "answer": "Timing and cost depend on the scope, integrations, and requirements. We clarify the work, milestones, and commercial details with you before moving forward."
+      }
+    },
+    "moreQuestions": "Have a question that isn’t covered here?",
+    "contactLink": "Talk to our team"
+  },
   "common": {
     "skipToContent": "Skip to content",
     "loading": "Loading"
@@ -178,6 +212,7 @@
     "services": "Services",
     "features": "Features",
     "howWeWork": "How we work",
+    "faq": "FAQ",
     "contact": "Contact",
     "menu": "Menu",
     "close": "Close",

@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero/hero";
 import { Contact } from "@/components/sections/contact/contact";
+import { Faq } from "@/components/sections/faq/faq";
 import { Features } from "@/components/sections/features/features";
 import { HowWeWork } from "@/components/sections/how-we-work/how-we-work";
 import { Services } from "@/components/sections/services/services";
@@ -11,6 +12,7 @@ export default function HomePage() {
       <Services />
       <Features />
       <HowWeWork />
+      <Faq />
       <Contact />
     </main>
   );
