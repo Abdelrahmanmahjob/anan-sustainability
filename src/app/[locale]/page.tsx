@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero/hero";
 import { Contact } from "@/components/sections/contact/contact";
+import { ClosingCta } from "@/components/sections/closing-cta";
 import { Faq } from "@/components/sections/faq/faq";
 import { Features } from "@/components/sections/features/features";
 import { HowWeWork } from "@/components/sections/how-we-work/how-we-work";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HowWeWork />
       <Faq />
       <Contact />
+      <ClosingCta />
     </main>
   );
 }

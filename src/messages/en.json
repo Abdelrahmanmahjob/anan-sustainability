@@ -167,6 +167,13 @@
       }
     }
   },
+  "closingCta": {
+    "eyebrow": "Your next step starts here",
+    "title": "Let’s make sustainability work for you.",
+    "description": "Bring us your challenge. Together, we’ll find a practical way forward for your business.",
+    "primaryCta": "Start a conversation",
+    "secondaryCta": "Explore our services"
+  },
   "faq": {
     "eyebrow": "Quick answers",
     "title": "Frequently asked questions",
