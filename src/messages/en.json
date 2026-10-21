@@ -64,6 +64,109 @@
       }
     }
   },
+  "features": {
+    "eyebrow": "Features",
+    "title": "Simple tools. Smarter everyday work.",
+    "description": "Thoughtful features help your team stay organized, collaborate confidently, and keep important work moving.",
+    "cards": {
+      "smartDaily": {
+        "title": "Smart Daily Suggestions",
+        "description": "Send, receive, and manage tasks—all in one place, fully encrypted."
+      },
+      "encryptedTasks": {
+        "title": "End-to-End Encryption",
+        "description": "Every task and message stays private, from your device to your team."
+      },
+      "complianceReady": {
+        "title": "Compliance Ready",
+        "description": "Built-in audit trails and policies that keep you aligned with regulations."
+      },
+      "teamSync": {
+        "title": "Team Sync",
+        "description": "Everyone sees the same updates in real time, without the back and forth."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Actionable insights from real-time data & future trends."
+      }
+    }
+  },
+  "howWeWork": {
+    "eyebrow": "How we work",
+    "title": "Clear steps. Work that moves you forward.",
+    "description": "We bring your team into the process from day one, keeping decisions, progress, and next steps clear.",
+    "stepsLabel": "Our project process",
+    "steps": {
+      "discovery": {
+        "title": "Understand your needs",
+        "description": "We learn how your business works, what is getting in the way, and what you want to achieve."
+      },
+      "planning": {
+        "title": "Agree on the plan",
+        "description": "Together, we set priorities, scope, and milestones before work begins."
+      },
+      "design": {
+        "title": "Shape the solution",
+        "description": "We map out a clear experience and review it with your team early, before development."
+      },
+      "development": {
+        "title": "Build and test",
+        "description": "We develop the solution, test it with you, and refine it around the way your team works."
+      },
+      "launch": {
+        "title": "Launch and keep improving",
+        "description": "We help your team get started, then keep supporting and improving the solution as needs evolve."
+      }
+    },
+    "visual": {
+      "workspace": "Project workspace",
+      "status": "In sync",
+      "journeyLabel": "A shared plan",
+      "journeyTitle": "From first conversation to lasting impact.",
+      "phases": {
+        "discovery": "Understand",
+        "build": "Build",
+        "launch": "Grow"
+      },
+      "collaboration": "Your team + Anan",
+      "teamInitial": "T",
+      "ananInitial": "A"
+    }
+  },
+  "contact": {
+    "eyebrow": "Start a conversation",
+    "title": "Let’s talk about what you’re building.",
+    "description": "Tell us a little about your goals. We’ll explore how a practical digital solution can support your team.",
+    "topics": {
+      "solutions": "Sustainability and business software",
+      "partnerships": "Product and partnership inquiries",
+      "conversation": "A first conversation about your needs"
+    },
+    "sideNote": "A clear conversation is a good place to start.",
+    "form": {
+      "eyebrow": "Get in touch",
+      "title": "How can we help?",
+      "description": "Share a few details and our team will take it from there.",
+      "name": "Your name",
+      "namePlaceholder": "Name",
+      "email": "Work email",
+      "emailPlaceholder": "you@company.com",
+      "message": "How can we help?",
+      "messagePlaceholder": "Tell us about your project or what you’re looking for...",
+      "submit": "Send inquiry",
+      "sending": "Sending...",
+      "success": "Thanks for reaching out. We’ll be in touch soon.",
+      "error": "We couldn’t send your inquiry. Please try again.",
+      "unavailable": "Our contact service isn’t set up yet. Please try again later.",
+      "validation": {
+        "nameRequired": "Please enter at least 2 characters.",
+        "nameTooLong": "Name must be 100 characters or fewer.",
+        "emailInvalid": "Enter a valid email address.",
+        "messageTooShort": "Please share at least 20 characters.",
+        "messageTooLong": "Message must be 5,000 characters or fewer."
+      }
+    }
+  },
   "common": {
     "skipToContent": "Skip to content",
     "loading": "Loading"

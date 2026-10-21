@@ -135,7 +135,7 @@ export function Services() {
       id="services"
       aria-labelledby="services-title"
       dir={isRtl ? "rtl" : "ltr"}
-      className="relative isolate scroll-mt-navbar overflow-hidden border-b border-border-hairline py-4xl sm:py-5xl"
+      className="relative max-w-7xl mx-auto isolate scroll-mt-navbar overflow-hidden border-b border-border-hairline py-4xl sm:py-5xl"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_22%,var(--color-glow-emerald),transparent_58%)]" />
 
