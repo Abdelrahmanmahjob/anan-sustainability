@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Plus } from "lucide-react";
+import { ArrowDown, Plus } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { Link } from "@/i18n/navigation";
@@ -159,7 +159,7 @@ export function Faq() {
             className="inline-flex min-h-touch items-center gap-xs rounded-md px-xs font-medium text-primary underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {t("contactLink")}
-            <ArrowUpRight
+            <ArrowDown
               aria-hidden="true"
               className={`h-4 w-4 ${isRtl ? "-scale-x-100" : ""}`}
             />

@@ -11,6 +11,31 @@
     "secondaryCta": "Explore our services",
     "caption": "Built for business. Designed for long-term impact."
   },
+  "about": {
+    "eyebrow": "About Anan",
+    "title": "A more practical path to a sustainable future.",
+    "description": "Anan Sustainability is a Saudi technology company building digital products that help businesses turn sustainability goals into everyday progress.",
+    "detail": "We bring business understanding and thoughtful technology together, creating solutions that make complex work clearer and easier to move forward.",
+    "link": "See how we work",
+    "visual": {
+      "wordmark": "Anan",
+      "caption": "Technology with purpose"
+    },
+    "principles": {
+      "practical": {
+        "title": "Built around your business",
+        "description": "We begin with your needs and shape useful solutions around how your team works."
+      },
+      "lasting": {
+        "title": "Made for lasting impact",
+        "description": "We help make sustainability measurable, manageable, and part of everyday decisions."
+      },
+      "forward": {
+        "title": "Progress, together",
+        "description": "We work alongside your team, making each step clear from the first conversation."
+      }
+    }
+  },
   "services": {
     "eyebrow": "What we build",
     "title": "Digital tools built around the way your business works.",
@@ -241,6 +266,7 @@
     "companyName": "Anan Sustainability",
     "mainNavigation": "Main navigation",
     "home": "Home",
+    "about": "About",
     "services": "Services",
     "features": "Features",
     "howWeWork": "How we work",

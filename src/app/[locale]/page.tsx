@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero/hero";
+import { About } from "@/components/sections/about/about";
 import { Contact } from "@/components/sections/contact/contact";
 import { ClosingCta } from "@/components/sections/closing-cta";
 import { Faq } from "@/components/sections/faq/faq";
@@ -10,6 +11,7 @@ export default function HomePage() {
   return (
     <main id="main-content" tabIndex={-1} className="min-h-dvh bg-transparent">
       <Hero />
+      <About />
       <Services />
       <Features />
       <HowWeWork />
