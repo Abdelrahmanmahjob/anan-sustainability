@@ -171,14 +171,20 @@ function Fixture({ isLit }: LitProps) {
 type VolumetricStudioProps = Readonly<{
   className?: string;
   reducedMotion: boolean;
+  onReady?: () => void;
 }>;
 
 export function VolumetricStudio({
   className,
   reducedMotion,
+  onReady,
 }: VolumetricStudioProps) {
   const [lightsOn, setLightsOn] = useState(false);
   const isLit = reducedMotion || lightsOn;
+
+  useEffect(() => {
+    onReady?.();
+  }, [onReady]);
 
   useEffect(() => {
     if (reducedMotion) return;
@@ -209,7 +215,7 @@ export function VolumetricStudio({
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 isolate overflow-hidden bg-carbon-base",
+        "pointer-events-none absolute inset-0 isolate overflow-hidden bg-carbon-base [--spot-left-0:34%] [--spot-left-1:50%] [--spot-left-2:66%] max-sm:[--spot-left-0:22%] max-sm:[--spot-left-2:78%]",
         className,
       )}
       style={sceneVars}
@@ -281,8 +287,8 @@ export function VolumetricStudio({
         style={{
           background: spotPositions
             .map(
-              (position) =>
-                `radial-gradient(ellipse 15% 22% at ${position}% 60%, var(--color-glow-emerald), transparent 72%)`,
+              (position, index) =>
+                `radial-gradient(ellipse 15% 22% at var(--spot-left-${index}, ${position}%) 60%, var(--color-glow-emerald), transparent 72%)`,
             )
             .join(", "),
         }}
@@ -327,12 +333,12 @@ export function VolumetricStudio({
       />
 
       {/* ---- Spotlights: beam first, fixture on top ---- */}
-      {spotPositions.map((position) => (
+      {spotPositions.map((position, index) => (
         <div
           key={position}
           className="absolute inset-y-0 w-0"
           style={{
-            left: `${position}%`,
+            left: `var(--spot-left-${index}, ${position}%)`,
             fontSize: "clamp(5px, 0.48vw, 9px)",
           }}
         >

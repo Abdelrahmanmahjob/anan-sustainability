@@ -72,6 +72,7 @@ export function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const pendingSectionRef = useRef<string | null>(null);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
@@ -226,7 +227,7 @@ export function Navbar() {
 
               return (
                 <li key={id}>
-                  <a
+                  <Link
                     href={`#${id}`}
                     className="relative isolate inline-flex min-h-touch items-center rounded-full px-lg font-body text-body-md text-text-muted transition-colors hover:bg-white/5 hover:text-text-pure focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[3px] aria-[current=location]:text-text-pure"
                     aria-current={isActive ? "location" : undefined}
@@ -242,7 +243,7 @@ export function Navbar() {
                       />
                     )}
                     {t(translationKey)}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -269,10 +270,10 @@ export function Navbar() {
             </span>
             <span className="relative inline-block h-4 w-4" aria-hidden="true">
               <span
-                className={`absolute start-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 bg-current transition-all ${isMenuOpen ? "top-1/2 rotate-45" : "top-[35%]"}`}
+                className={`absolute left-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 bg-current transition-all ${isMenuOpen ? "top-1/2 rotate-45" : "top-[35%]"}`}
               />
               <span
-                className={`absolute start-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 bg-current transition-all ${isMenuOpen ? "top-1/2 -rotate-45" : "top-[65%]"}`}
+                className={`absolute left-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 bg-current transition-all ${isMenuOpen ? "top-1/2 -rotate-45" : "top-[65%]"}`}
               />
             </span>
           </button>
@@ -290,7 +291,19 @@ export function Navbar() {
             variants={menuVariants}
             dir={locale === "ar" ? "rtl" : "ltr"}
             onAnimationComplete={(definition) => {
-              if (definition === "exit") menuButtonRef.current?.focus();
+              if (definition !== "exit") return;
+
+              const sectionId = pendingSectionRef.current;
+              pendingSectionRef.current = null;
+              if (sectionId) {
+                requestAnimationFrame(() => {
+                  document
+                    .getElementById(sectionId)
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+              }
+
+              menuButtonRef.current?.focus();
             }}
           >
             <div
@@ -327,8 +340,8 @@ export function Navbar() {
                     className="relative inline-block h-4 w-4"
                     aria-hidden="true"
                   >
-                    <span className="absolute start-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-current" />
-                    <span className="absolute start-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-current" />
+                    <span className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 rotate-45 bg-current" />
+                    <span className="absolute left-1/2 top-1/2 h-px w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-current" />
                   </span>
                 </button>
               </div>
@@ -348,13 +361,19 @@ export function Navbar() {
                       variants={menuItemVariants}
                       className="border-b border-border-hairline last:border-b-0"
                     >
-                      <a
+                      <Link
                         href={`#${id}`}
                         className="flex min-h-navbar items-center gap-md text-text-muted no-underline transition-colors hover:text-text-pure focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[3px] aria-[current=location]:text-text-pure"
                         aria-current={
                           activeSection === id ? "location" : undefined
                         }
-                        onClick={() => handleSectionNavigate(id)}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          pendingSectionRef.current = id;
+                          setActiveSection(id);
+                          window.history.pushState(null, "", `#${id}`);
+                          setIsMenuOpen(false);
+                        }}
                       >
                         <span
                           className="font-mono text-label-mono-md text-accent-emerald"
@@ -375,7 +394,7 @@ export function Navbar() {
                         >
                           ↗
                         </span>
-                      </a>
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>
