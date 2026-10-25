@@ -2,25 +2,29 @@
 
 import { useGSAP } from "@gsap/react";
 import {
-  FileCheck2,
-  LockKeyhole,
-  ShieldCheck,
-  Users,
+  PackageCheck,
+  Target,
+  Maximize,
+  CheckCircle2,
+  Cpu,
+  Handshake,
   type LucideIcon,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef } from "react";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const CARDS: { key: string; icon: LucideIcon }[] = [
-  { key: "smartDaily", icon: FileCheck2 },
-  { key: "encryptedTasks", icon: LockKeyhole },
-  { key: "complianceReady", icon: ShieldCheck },
-  { key: "teamSync", icon: Users },
-  { key: "analytics", icon: FileCheck2 },
+  { key: "smartDaily", icon: PackageCheck },
+  { key: "encryptedTasks", icon: Target },
+  { key: "complianceReady", icon: Maximize },
+  { key: "teamSync", icon: CheckCircle2 },
+  { key: "analytics", icon: Cpu },
+  { key: "support", icon: Handshake },
 ];
 
 export function Features() {
@@ -109,24 +113,12 @@ export function Features() {
       />
 
       <div className="container-shell w-full">
-        <header className="mb-2xl flex flex-col items-start gap-md text-start sm:mb-3xl">
-          <span
-            className={`inline-flex items-center gap-sm rounded-full border border-outline-variant bg-carbon-surface/80 px-md py-xs text-primary ${
-              isRtl
-                ? "font-arabic text-body-sm"
-                : "font-mono text-label-mono-sm uppercase tracking-[0.12em]"
-            }`}
-          >
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary)]"
-            />
-            {t("eyebrow")}
-          </span>
+        <header className="mb-xl flex flex-col items-start gap-md text-start sm:mb-3xl">
+          <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
           <h2
             id="features-title"
-            className={`max-w-3xl text-headline-lg-mobile font-medium leading-tight text-text-pure sm:text-headline-lg ${
-              isRtl ? "font-arabic" : "font-display"
+            className={`max-w-4xl text-headline-lg-mobile font-medium text-text-pure sm:text-headline-lg ${
+              isRtl ? "font-arabic !leading-[1.5]" : "font-display"
             }`}
           >
             {t("title")}

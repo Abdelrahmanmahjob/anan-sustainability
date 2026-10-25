@@ -36,19 +36,6 @@ export function Faq() {
 
       <div className="container-shell">
         <header className="mx-auto mb-2xl flex max-w-3xl flex-col items-center gap-md text-center sm:mb-3xl">
-          <span
-            className={`glass-control relative inline-flex items-center gap-sm rounded-full px-md py-xs text-primary ${
-              isRtl
-                ? "font-arabic text-body-sm"
-                : "font-mono text-label-mono-sm uppercase tracking-[0.12em]"
-            }`}
-          >
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary)]"
-            />
-            {t("eyebrow")}
-          </span>
           <h2
             id="faq-title"
             className={`text-headline-lg-mobile font-medium leading-tight text-text-pure sm:text-headline-lg ${

@@ -974,3 +974,432 @@ select {
     transform: translateY(0);
   }
 }
+
+/* Who we serve */
+
+.who-orb[data-active="false"] *,
+.who-orb[data-active="false"] *::before,
+.who-orb[data-active="false"] *::after {
+  animation-play-state: paused !important;
+}
+
+.who-ping {
+  animation: who-ping 3s ease-out infinite;
+}
+
+@keyframes who-ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Squashing a full circle sideways reads as a meridian rotating around. */
+.who-meridian {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: who-meridian 6s ease-in-out infinite;
+}
+
+@keyframes who-meridian {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.04);
+  }
+}
+
+/* ---------- accent bar on the market card ---------- */
+
+.who-bar {
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--color-primary) 20%,
+    var(--color-primary) 80%,
+    transparent
+  );
+  box-shadow: 0 0 14px var(--color-primary);
+}
+
+.who-bar::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 40%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(255 255 255 / 0.85),
+    transparent
+  );
+  animation: who-bar 3.2s ease-in-out infinite;
+}
+
+@keyframes who-bar {
+  from {
+    transform: translateY(-120%);
+  }
+  to {
+    transform: translateY(320%);
+  }
+}
+
+/* ---------- background drift ---------- */
+
+.who-drift {
+  animation: who-drift 16s ease-in-out infinite;
+}
+
+@keyframes who-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, -4%, 0) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-ping,
+  .who-meridian,
+  .who-bar::after,
+  .who-drift {
+    animation: none !important;
+  }
+}
+
+/* our values  */
+
+.ov-scan {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.ov-scan::before {
+  content: "";
+  position: absolute;
+  inset-block: -30%;
+  inset-inline-start: 0;
+  width: 30%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 22%, transparent),
+    rgb(255 255 255 / 0.14),
+    transparent
+  );
+  transform: translateX(-140%) skewX(-18deg);
+  animation: ov-scan 7s ease-in-out infinite;
+}
+
+[dir="rtl"] .ov-scan::before {
+  transform: translateX(140%) skewX(18deg);
+  animation-name: ov-scan-rtl;
+}
+
+@keyframes ov-scan {
+  0%,
+  60% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(440%) skewX(-18deg);
+  }
+}
+
+@keyframes ov-scan-rtl {
+  0%,
+  60% {
+    transform: translateX(140%) skewX(18deg);
+  }
+  100% {
+    transform: translateX(-440%) skewX(18deg);
+  }
+}
+
+/* Slow background drift */
+.ov-drift {
+  animation: ov-drift 16s ease-in-out infinite;
+}
+
+@keyframes ov-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, -4%, 0) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ov-scan::before,
+  .ov-drift {
+    animation: none !important;
+  }
+}
+
+/* experience projects  */
+
+.xp-notch {
+  --xp-off: 2.15rem; /* button centre, from the corner */
+  --xp-hole: 2.3rem; /* button radius + gap */
+  -webkit-mask-image: radial-gradient(
+    circle at calc(100% - var(--xp-off)) calc(100% - var(--xp-off)),
+    transparent var(--xp-hole),
+    #000 calc(var(--xp-hole) + 1px)
+  );
+  mask-image: radial-gradient(
+    circle at calc(100% - var(--xp-off)) calc(100% - var(--xp-off)),
+    transparent var(--xp-hole),
+    #000 calc(var(--xp-hole) + 1px)
+  );
+}
+
+/* In RTL the button, and so the notch, moves to the left corner. */
+[dir="rtl"] .xp-notch {
+  -webkit-mask-image: radial-gradient(
+    circle at var(--xp-off) calc(100% - var(--xp-off)),
+    transparent var(--xp-hole),
+    #000 calc(var(--xp-hole) + 1px)
+  );
+  mask-image: radial-gradient(
+    circle at var(--xp-off) calc(100% - var(--xp-off)),
+    transparent var(--xp-hole),
+    #000 calc(var(--xp-hole) + 1px)
+  );
+}
+
+/* ---------- header fill wipe ---------- */
+
+.xp-fill {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xp-title,
+.xp-desc,
+.xp-tag,
+.xp-chip {
+  transition:
+    color 0.35s ease 0.08s,
+    background-color 0.35s ease 0.08s,
+    border-color 0.35s ease 0.08s;
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-fill {
+  transform: scaleY(1);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-title {
+  color: var(--color-carbon-base);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-desc {
+  color: color-mix(in srgb, var(--color-carbon-base) 78%, transparent);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-tag,
+.xp-card:is(:hover, :focus-visible) .xp-chip {
+  color: var(--color-carbon-base);
+  border-color: color-mix(in srgb, var(--color-carbon-base) 30%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-carbon-base) 10%,
+    transparent
+  );
+}
+
+/* ---------- stacked layers behind the screenshot ---------- */
+
+.xp-layer {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: xp-bob 5s ease-in-out infinite;
+  animation-delay: var(--xp-d, 0s);
+}
+
+.xp-layer--1 {
+  transform: translateY(0);
+}
+
+.xp-layer--2 {
+  transform: translateY(0);
+  animation-direction: reverse;
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-layer--1 {
+  transform: translateY(-0.5rem);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-layer--2 {
+  transform: translateY(-0.8rem);
+}
+
+/* `translate` is a separate property, so it never fights the fan-out above. */
+@keyframes xp-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -3px;
+  }
+}
+
+/* ---------- screenshot pan and shine ---------- */
+
+.xp-shot {
+  transition:
+    object-position 2.4s cubic-bezier(0.45, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-shot {
+  object-position: bottom;
+  transform: scale(1.03);
+}
+
+.xp-shine::before {
+  content: "";
+  position: absolute;
+  inset-block: -20%;
+  inset-inline-start: 0;
+  z-index: 2;
+  width: 34%;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 18%, transparent),
+    rgb(255 255 255 / 0.18),
+    transparent
+  );
+  transform: translateX(-140%) skewX(-18deg);
+}
+
+[dir="rtl"] .xp-shine::before {
+  transform: translateX(140%) skewX(18deg);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-shine::before {
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(420%) skewX(-18deg);
+}
+
+[dir="rtl"] .xp-card:is(:hover, :focus-visible) .xp-shine::before {
+  transform: translateX(-420%) skewX(18deg);
+}
+
+/* ---------- arrow button ---------- */
+
+.xp-btn {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.xp-arrow-a,
+.xp-arrow-b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.3s ease;
+}
+
+.xp-arrow-b {
+  opacity: 0;
+  transform: translate(-140%, 140%);
+}
+
+[dir="rtl"] .xp-arrow-b {
+  transform: translate(140%, 140%);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-btn {
+  background-color: var(--color-primary);
+  color: var(--color-carbon-base);
+  transform: scale(1.06);
+  animation: xp-pulse 1.7s ease-out infinite;
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-arrow-a {
+  opacity: 0;
+  transform: translate(140%, -140%);
+}
+
+[dir="rtl"] .xp-card:is(:hover, :focus-visible) .xp-arrow-a {
+  transform: translate(-140%, -140%);
+}
+
+.xp-card:is(:hover, :focus-visible) .xp-arrow-b {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@keyframes xp-pulse {
+  0% {
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--color-primary) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 14px transparent;
+  }
+}
+
+/* ---------- section background drift ---------- */
+
+.xp-drift {
+  animation: xp-drift 16s ease-in-out infinite;
+}
+
+@keyframes xp-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, -4%, 0) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-layer,
+  .xp-drift,
+  .xp-card:is(:hover, :focus-visible) .xp-btn {
+    animation: none !important;
+  }
+
+  .xp-shot,
+  .xp-fill,
+  .xp-layer,
+  .xp-arrow-a,
+  .xp-arrow-b {
+    transition-duration: 0.01ms !important;
+  }
+
+  .xp-card:is(:hover, :focus-visible) .xp-shot {
+    transform: none;
+  }
+
+  .xp-shine::before {
+    display: none;
+  }
+}

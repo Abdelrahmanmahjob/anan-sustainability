@@ -9,6 +9,7 @@ const STEPS = [
   "design",
   "development",
   "launch",
+  "support",
 ] as const;
 
 // Put your images in /public/images/how-we-work/
@@ -17,7 +18,8 @@ const IMAGES: Record<(typeof STEPS)[number], string> = {
   planning: "/images/how-we-work/launch.webp",
   design: "/images/how-we-work/design.webp",
   development: "/images/how-we-work/development.webp",
-  launch: "/images/how-we-work/planning.webp",
+  launch: "/images/how-we-work/planning2.webp",
+  support: "/images/how-we-work/support.webp",
 };
 
 export function WorkflowVisual({ activeStep = 0 }: { activeStep?: number }) {

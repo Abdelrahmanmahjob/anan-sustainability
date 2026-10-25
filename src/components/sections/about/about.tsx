@@ -1,7 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { ArrowDown, Compass, Leaf, Sparkles } from "lucide-react";
+import { ArrowDown, Blocks, BriefcaseBusiness, Handshake } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import gsap from "gsap";
@@ -11,14 +11,15 @@ import {
   type PrincipleKey,
 } from "@/components/sections/about/about-orbit";
 import { ButtonLink } from "@/components/ui/button";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { cn } from "@/lib/cn";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const PRINCIPLES = [
-  { key: "practical", icon: Compass },
-  { key: "lasting", icon: Leaf },
-  { key: "forward", icon: Sparkles },
+  { key: "solutions", icon: Blocks },
+  { key: "business", icon: BriefcaseBusiness },
+  { key: "partnership", icon: Handshake },
 ] as const;
 
 export function About() {
@@ -47,8 +48,6 @@ export function About() {
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
         const glow = q("[data-glow]");
-        const eyebrow = q("[data-eyebrow]");
-        const eyebrowDot = q("[data-eyebrow-dot]");
         const words = qa("[data-word]");
         const paragraphs = qa("[data-para]");
         const cta = q("[data-cta]");
@@ -62,8 +61,6 @@ export function About() {
 
         if (
           !glow ||
-          !eyebrow ||
-          !eyebrowDot ||
           !cta ||
           !ctaArrow ||
           !visual ||
@@ -91,32 +88,6 @@ export function About() {
             },
           },
         );
-
-        /* Eyebrow */
-        gsap.fromTo(
-          eyebrow,
-          { autoAlpha: 0, y: 16, scale: 0.92 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.7,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: eyebrow,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
-        gsap.to(eyebrowDot, {
-          scale: 1.6,
-          opacity: 0.5,
-          duration: 1.1,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-        });
 
         /* Title: words light up one by one as you scroll */
         gsap.fromTo(
@@ -304,22 +275,7 @@ export function About() {
       <div className="container-shell">
         <div className="grid items-center gap-3xl lg:grid-cols-12 lg:gap-2xl">
           <div className="text-start lg:col-span-7">
-            <span
-              data-eyebrow
-              className={cn(
-                "glass-control relative inline-flex items-center gap-sm rounded-full px-md py-xs text-primary",
-                isRtl
-                  ? "font-arabic text-body-sm"
-                  : "font-mono text-label-mono-sm uppercase tracking-[0.12em]",
-              )}
-            >
-              <span
-                data-eyebrow-dot
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary)]"
-              />
-              {t("eyebrow")}
-            </span>
+            <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
 
             <h2
               id="about-title"
@@ -349,16 +305,6 @@ export function About() {
               }`}
             >
               {t("description")}
-            </p>
-            <p
-              data-para
-              className={`mt-md max-w-2xl text-text-muted ${
-                isRtl
-                  ? "font-arabic text-body-md"
-                  : "font-body text-body-md sm:text-body-lg"
-              }`}
-            >
-              {t("detail")}
             </p>
 
             <div data-cta className="mt-xl w-full sm:inline-block sm:w-auto">

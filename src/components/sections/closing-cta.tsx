@@ -2,7 +2,7 @@
 
 import Matter from "matter-js";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { ButtonLink } from "@/components/ui/button";
@@ -347,32 +347,6 @@ export function ClosingCta() {
           }
           className="pointer-events-none z-10 flex max-w-3xl flex-col items-center"
         >
-          <motion.span
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.85 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15, ease: EASE }}
-            className="mb-md inline-flex items-center gap-sm rounded-full border border-primary/25 bg-carbon-base/60 px-md py-xs text-primary backdrop-blur-md"
-          >
-            <motion.span
-              aria-hidden="true"
-              animate={reduceMotion ? undefined : { rotate: [0, 18, -18, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="inline-flex"
-            >
-              <Sparkles className="h-3.5 w-3.5" />
-            </motion.span>
-            <span
-              className={
-                isRtl
-                  ? "font-arabic text-body-sm"
-                  : "font-mono text-label-mono-sm uppercase tracking-[0.12em]"
-              }
-            >
-              {t("eyebrow")}
-            </span>
-          </motion.span>
-
           {/* Word-by-word title reveal */}
           <h2
             id="closing-cta-title"

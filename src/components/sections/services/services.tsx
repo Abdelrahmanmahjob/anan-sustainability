@@ -8,6 +8,7 @@ import {
   ServiceVisual,
   type ServiceVisualLabels,
 } from "@/components/sections/services/service-visual";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { services } from "@/content/services";
 import { cn } from "@/lib/cn";
 
@@ -149,20 +150,7 @@ export function Services() {
           transition={reduceMotion ? { duration: 0 } : { duration: 0.65, ease }}
           className="mb-2xl flex flex-col items-start gap-md text-start sm:mb-3xl"
         >
-          <span
-            className={cn(
-              "glass-control relative inline-flex items-center gap-sm rounded-full px-md py-xs text-primary",
-              isRtl
-                ? "font-arabic text-body-sm"
-                : "font-mono text-label-mono-sm uppercase tracking-[0.12em]",
-            )}
-          >
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary)]"
-            />
-            {t("eyebrow")}
-          </span>
+          <SectionEyebrow>{t("eyebrow")}</SectionEyebrow>
           <h2
             id="services-title"
             className={cn(

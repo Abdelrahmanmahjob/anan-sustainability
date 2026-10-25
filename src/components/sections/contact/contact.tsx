@@ -1,17 +1,12 @@
-import {
-  ArrowUpRight,
-  BriefcaseBusiness,
-  Leaf,
-  MessagesSquare,
-} from "lucide-react";
+import { ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { ContactForm } from "@/components/sections/contact/contact-form";
-import { cn } from "@/lib/cn";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 
-const inquiryTypes = [
-  { key: "solutions", icon: Leaf },
-  { key: "partnerships", icon: BriefcaseBusiness },
-  { key: "conversation", icon: MessagesSquare },
+const contactInfo = [
+  { key: "phone", icon: Phone },
+  { key: "mail", icon: Mail },
+  { key: "location", icon: MapPin },
 ] as const;
 
 export function Contact() {
@@ -38,20 +33,6 @@ export function Contact() {
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_15%_0%,color-mix(in_srgb,var(--color-primary)_22%,transparent),transparent_65%)]"
             />
-            <span
-              className={cn(
-                "mb-xl inline-flex w-fit items-center gap-sm rounded-full border border-primary/25 bg-carbon-base/30 px-md py-xs text-primary",
-                isRtl
-                  ? "font-arabic text-body-sm"
-                  : "font-mono text-label-mono-sm uppercase tracking-[0.12em]",
-              )}
-            >
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_12px_var(--color-primary)]"
-              />
-              {t("eyebrow")}
-            </span>
 
             <h2
               id="contact-title"
@@ -72,17 +53,18 @@ export function Contact() {
             </p>
 
             <ul className="mt-xl flex flex-col gap-md">
-              {inquiryTypes.map(({ key, icon: Icon }) => (
-                <li key={key} className="flex items-start gap-md">
+              {contactInfo.map(({ key, icon: Icon }) => (
+                <li key={key} className="flex items-center gap-md">
                   <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-primary/20 bg-primary/10 text-primary">
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </span>
                   <span
+                    dir={"ltr"}
                     className={`pt-xs text-body-md text-text-pure ${
                       isRtl ? "font-arabic" : "font-body"
                     }`}
                   >
-                    {t(`topics.${key}`)}
+                    {t(`contactInfo.${key}`)}
                   </span>
                 </li>
               ))}
@@ -107,15 +89,9 @@ export function Contact() {
 
           <div className="flex flex-col justify-start p-lg sm:p-xl lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:rounded-[2rem] lg:border lg:border-outline-variant/50 lg:bg-[linear-gradient(145deg,color-mix(in_srgb,var(--color-surface-container)_88%,transparent),color-mix(in_srgb,var(--color-carbon-surface)_98%,transparent))] lg:py-3xl lg:pe-3xl lg:ps-[8rem] lg:shadow-2xl">
             <div className="mb-xl text-start">
-              <p
-                className={`font-medium text-primary ${
-                  isRtl
-                    ? "font-arabic text-body-sm"
-                    : "font-mono text-label-mono-sm uppercase tracking-[0.12em]"
-                }`}
-              >
+              <SectionEyebrow className="mb-sm">
                 {t("form.eyebrow")}
-              </p>
+              </SectionEyebrow>
               <h3
                 className={`mt-sm text-headline-sm font-medium text-text-pure sm:text-headline-md ${
                   isRtl ? "font-arabic" : "font-display"

@@ -16,6 +16,7 @@ const STEPS = [
   "design",
   "development",
   "launch",
+  "support",
 ] as const;
 
 export function HowWeWork() {
@@ -108,14 +109,16 @@ export function HowWeWork() {
       <div className="container-shell grid gap-3xl lg:grid-cols-2 lg:gap-5xl">
         {/* Pinned left column */}
         <div className="flex flex-col gap-2xl lg:sticky lg:top-[calc(var(--navbar-height)+2rem)] lg:self-start">
-          <h2
-            id="how-we-work-title"
-            className={`max-w-md text-headline-lg-mobile font-bold uppercase leading-[1.05] tracking-tight sm:text-headline-lg ${
-              isRtl ? "font-arabic" : "font-display"
-            }`}
-          >
-            {t("title")}
-          </h2>
+          <div className="flex flex-col gap-md">
+            <h2
+              id="how-we-work-title"
+              className={`max-w-md text-headline-lg-mobile font-bold uppercase leading-[1.05] tracking-tight sm:text-headline-lg ${
+                isRtl ? "font-arabic" : "font-display"
+              }`}
+            >
+              {t("title")}
+            </h2>
+          </div>
 
           <WorkflowVisual activeStep={activeStep} />
         </div>

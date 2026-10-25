@@ -1,7 +1,12 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { Compass, Leaf, Sparkles, type LucideIcon } from "lucide-react";
+import {
+  Blocks,
+  BriefcaseBusiness,
+  Handshake,
+  type LucideIcon,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -11,7 +16,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-export type PrincipleKey = "practical" | "lasting" | "forward";
+export type PrincipleKey = "solutions" | "business" | "partnership";
 
 // ring 0 = outer solid ring, ring 1 = inner dashed ring
 const NODES: {
@@ -20,9 +25,9 @@ const NODES: {
   ring: 0 | 1;
   angle: number;
 }[] = [
-  { key: "practical", icon: Compass, ring: 0, angle: -62 },
-  { key: "forward", icon: Sparkles, ring: 0, angle: 118 },
-  { key: "lasting", icon: Leaf, ring: 1, angle: 24 },
+  { key: "solutions", icon: Blocks, ring: 0, angle: -62 },
+  { key: "partnership", icon: Handshake, ring: 0, angle: 118 },
+  { key: "business", icon: BriefcaseBusiness, ring: 1, angle: 24 },
 ];
 
 const RING_SPEEDS = [10, -7.5]; // degrees per second
@@ -42,7 +47,7 @@ export function AboutOrbit({ isRtl, active, onSelect }: Props) {
   const sweepRef = useRef<HTMLDivElement>(null);
   const coreRef = useRef<HTMLDivElement>(null);
   const coreInnerRef = useRef<HTMLDivElement>(null);
-  const leafRef = useRef<HTMLSpanElement>(null);
+  const coreIconRef = useRef<HTMLSpanElement>(null);
   const rippleRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const ringRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -80,7 +85,7 @@ export function AboutOrbit({ isRtl, active, onSelect }: Props) {
       const sweep = sweepRef.current;
       const core = coreRef.current;
       const coreInner = coreInnerRef.current;
-      const leaf = leafRef.current;
+      const coreIcon = coreIconRef.current;
       const rippleLayer = rippleRef.current;
       if (
         !root ||
@@ -89,7 +94,7 @@ export function AboutOrbit({ isRtl, active, onSelect }: Props) {
         !sweep ||
         !core ||
         !coreInner ||
-        !leaf ||
+        !coreIcon ||
         !rippleLayer
       ) {
         return;
@@ -377,7 +382,7 @@ export function AboutOrbit({ isRtl, active, onSelect }: Props) {
           yoyo: true,
           ease: "sine.inOut",
         });
-        gsap.to(leaf, {
+        gsap.to(coreIcon, {
           rotate: 10,
           duration: 3,
           repeat: -1,
@@ -496,12 +501,12 @@ export function AboutOrbit({ isRtl, active, onSelect }: Props) {
             className="grid h-[42%] w-[42%] place-items-center rounded-full border border-primary/25 bg-[radial-gradient(circle_at_35%_25%,color-mix(in_srgb,var(--color-primary)_22%,var(--color-carbon-elevated)),var(--color-carbon-surface)_68%)] shadow-[0_0_64px_var(--color-glow-emerald),inset_0_1px_0_rgb(255_255_255_/_0.08)]"
           >
             <div className="flex flex-col items-center gap-xs">
-              <span ref={leafRef} className="inline-flex h-9 w-9">
+              <span ref={coreIconRef} className="inline-flex h-9 w-9">
                 <Image
+                  src="/brand/anan-sustainability-icon.png"
+                  alt={t("visual.wordmark")}
                   width={36}
                   height={36}
-                  src="/brand/anan-sustainability-icon.png"
-                  alt="Brand Logo"
                 />
               </span>
               <span
