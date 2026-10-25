@@ -102,7 +102,7 @@ export function Achievements() {
             >
               <p
                 className={cn(
-                  "text-display-xl-mobile font-semibold leading-none text-primary sm:text-display-xl",
+                  "text-display-xl-mobile text-3xl font-semibold leading-none text-primary sm:text-display-xl",
                   isRtl ? "font-arabic" : "font-display",
                 )}
                 aria-label={`${value}${suffix}`}
@@ -139,13 +139,19 @@ export function Achievements() {
             {projectTypes.map(({ key, value }) => (
               <motion.div
                 key={key}
-                initial={reduceMotion ? false : { opacity: 0, x: isRtl ? 20 : -20 }}
+                initial={
+                  reduceMotion ? false : { opacity: 0, x: isRtl ? 20 : -20 }
+                }
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={
                   reduceMotion
                     ? { duration: 0 }
-                    : { duration: 0.65, delay: key === "incubator" ? 0.12 : 0.24, ease }
+                    : {
+                        duration: 0.65,
+                        delay: key === "incubator" ? 0.12 : 0.24,
+                        ease,
+                      }
                 }
                 className="grid grid-cols-[auto_1fr] items-start gap-sm sm:gap-md"
               >
@@ -184,7 +190,9 @@ export function Achievements() {
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={reduceMotion ? { duration: 0 } : { duration: 0.7, ease }}
+            transition={
+              reduceMotion ? { duration: 0 } : { duration: 0.7, ease }
+            }
             className="text-start"
           >
             <div className="flex items-center gap-sm text-primary">
