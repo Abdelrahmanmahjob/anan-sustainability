@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import {
-  ArrowUpRight,
   Bot,
   Dumbbell,
   MapPinned,
@@ -151,13 +150,11 @@ export function ExperienceProjects() {
         >
           {projectKeys.map((key, index) => {
             const Icon = projectIcons[key];
-            const { href, image } = experienceProjects[key];
+            const { image } = experienceProjects[key];
 
             return (
               <motion.a
                 key={key}
-                href={href}
-                target="_blank"
                 rel="noopener noreferrer"
                 variants={reduceMotion ? undefined : cardVariants}
                 whileHover={
@@ -242,18 +239,6 @@ export function ExperienceProjects() {
                       className="xp-shot object-cover object-top"
                     />
                   </div>
-
-                  <span
-                    aria-hidden="true"
-                    className="xp-btn absolute bottom-[0.525rem] end-[0.525rem] z-10 grid h-[3.25rem] w-[3.25rem] place-items-center overflow-hidden rounded-full bg-surface-container-high text-text-pure"
-                  >
-                    <span className="xp-arrow-a">
-                      <ArrowUpRight className="h-5 w-5 rtl:-scale-x-100" />
-                    </span>
-                    <span className="xp-arrow-b">
-                      <ArrowUpRight className="h-5 w-5 rtl:-scale-x-100" />
-                    </span>
-                  </span>
                 </div>
               </motion.a>
             );

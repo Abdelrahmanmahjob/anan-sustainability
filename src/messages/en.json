@@ -159,6 +159,42 @@
         "defaultAction": "Default",
         "boldAction": "Bold"
       }
+    },
+    "showPoints": "Show details",
+    "hidePoints": "Hide details",
+    "groups": {
+      "g1": "Product & Digital Platform Development",
+      "g2": "Integration & Technical Infrastructure",
+      "g3": "Intelligence & Operational Improvement"
+    },
+    "points": {
+      "workflows": {
+        "integration": "System integration and API integrations.",
+        "payments": "Connecting payment, messaging, notification, and external services."
+      },
+      "platforms": {
+        "mobile": "Mobile app development for iOS and Android.",
+        "web": "Website and web platform development.",
+        "saas": "SaaS platforms and digital products.",
+        "portals": "Customer portals and internal systems.",
+        "erp": "ERP systems for factories and companies.",
+        "dashboards": "Dashboards and operational reports."
+      },
+      "data": {
+        "ai": "AI solutions and automation.",
+        "agents": "AI agents for customer service and operations."
+      },
+      "analytics": {
+        "iot": "Tracking solutions and IoT-connected platforms.",
+        "cloud": "Cloud services and infrastructure on AWS, Azure, and GCP.",
+        "devops": "DevOps, release management, and operational continuity.",
+        "qa": "Quality assurance, testing, maintenance, and technical support."
+      },
+      "reporting": {
+        "analysis": "Business analysis and identifying digital transformation opportunities.",
+        "uiux": "User experience and interface design (UI/UX).",
+        "consulting": "Technical consulting and building the digital roadmap."
+      }
     }
   },
   "experienceProjects": {

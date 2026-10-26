@@ -14,12 +14,12 @@ const STEPS = [
 
 // Put your images in /public/images/how-we-work/
 const IMAGES: Record<(typeof STEPS)[number], string> = {
-  discovery: "/images/how-we-work/discovery.webp",
-  planning: "/images/how-we-work/launch.webp",
-  design: "/images/how-we-work/design.webp",
-  development: "/images/how-we-work/development.webp",
-  launch: "/images/how-we-work/planning2.webp",
-  support: "/images/how-we-work/support.webp",
+  discovery: "/images/how-we-work/discovery2.webp",
+  planning: "/images/how-we-work/planning3.webp",
+  design: "/images/how-we-work/design2.webp",
+  development: "/images/how-we-work/development2.webp",
+  launch: "/images/how-we-work/launch2.webp",
+  support: "/images/how-we-work/support2.webp",
 };
 
 export function WorkflowVisual({ activeStep = 0 }: { activeStep?: number }) {

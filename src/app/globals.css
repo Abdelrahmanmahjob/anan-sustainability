@@ -1152,37 +1152,6 @@ select {
   }
 }
 
-/* experience projects  */
-
-.xp-notch {
-  --xp-off: 2.15rem; /* button centre, from the corner */
-  --xp-hole: 2.3rem; /* button radius + gap */
-  -webkit-mask-image: radial-gradient(
-    circle at calc(100% - var(--xp-off)) calc(100% - var(--xp-off)),
-    transparent var(--xp-hole),
-    #000 calc(var(--xp-hole) + 1px)
-  );
-  mask-image: radial-gradient(
-    circle at calc(100% - var(--xp-off)) calc(100% - var(--xp-off)),
-    transparent var(--xp-hole),
-    #000 calc(var(--xp-hole) + 1px)
-  );
-}
-
-/* In RTL the button, and so the notch, moves to the left corner. */
-[dir="rtl"] .xp-notch {
-  -webkit-mask-image: radial-gradient(
-    circle at var(--xp-off) calc(100% - var(--xp-off)),
-    transparent var(--xp-hole),
-    #000 calc(var(--xp-hole) + 1px)
-  );
-  mask-image: radial-gradient(
-    circle at var(--xp-off) calc(100% - var(--xp-off)),
-    transparent var(--xp-hole),
-    #000 calc(var(--xp-hole) + 1px)
-  );
-}
-
 /* ---------- header fill wipe ---------- */
 
 .xp-fill {

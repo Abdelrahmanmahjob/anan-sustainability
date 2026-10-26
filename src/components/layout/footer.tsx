@@ -33,7 +33,6 @@ const footerColumns = [
     links: [
       { label: "contact", href: "/#contact" },
       { label: "faq", href: "/#faq" },
-      { label: "startConversation", href: "/#contact" },
     ],
   },
   {
