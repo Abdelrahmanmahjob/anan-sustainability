@@ -101,6 +101,7 @@ export function ExperienceProjects() {
 
   return (
     <section
+      id="products"
       ref={sectionRef}
       aria-labelledby="experience-projects-title"
       dir={isRtl ? "rtl" : "ltr"}
