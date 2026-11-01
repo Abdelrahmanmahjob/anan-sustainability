@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { PointerEvent as ReactPointerEvent } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -14,6 +15,11 @@ import {
 } from "@/lib/animation-variants";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { useActiveSection } from "@/hooks/use-active-section";
+
+const productLinks = [
+  { translationKey: "saas" },
+  { translationKey: "whatsappAiAgent" },
+] as const;
 
 /**
  * SVG displacement filter used by `backdrop-filter: url(#liquid-glass-refraction)`.
@@ -226,7 +232,10 @@ export function Navbar() {
               const isActive = activeSection === id;
 
               return (
-                <li key={id}>
+                <li
+                  key={id}
+                  className={id === "products" ? "group relative" : undefined}
+                >
                   <Link
                     href={`#${id}`}
                     className="relative isolate inline-flex min-h-touch items-center rounded-full px-lg font-body text-body-md text-text-muted transition-colors hover:bg-white/5 hover:text-text-pure focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[3px] aria-[current=location]:text-text-pure"
@@ -243,7 +252,32 @@ export function Navbar() {
                       />
                     )}
                     {t(translationKey)}
+                    {id === "products" && (
+                      <ChevronDown
+                        aria-hidden="true"
+                        className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180 rtl:ml-0 rtl:mr-1"
+                      />
+                    )}
                   </Link>
+                  {id === "products" && (
+                    <div className="invisible absolute left-1/2 top-full z-50 w-max -translate-x-1/2 pt-2 opacity-0 transition-[opacity,visibility] group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                      <ul
+                        aria-label={t("products")}
+                        className="glass-panel m-0 min-w-60 list-none rounded-2xl p-sm shadow-[var(--shadow-navigation-glass)]"
+                      >
+                        {productLinks.map(({ translationKey: productKey }) => (
+                          <li key={productKey}>
+                            <Link
+                              href="#"
+                              className="flex min-h-touch items-center rounded-xl px-md font-body text-body-sm text-text-muted no-underline transition-colors hover:bg-white/5 hover:text-text-pure focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]"
+                            >
+                              {t(productKey)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </li>
               );
             })}
@@ -388,6 +422,12 @@ export function Navbar() {
                         >
                           {t(translationKey)}
                         </span>
+                        {id === "products" && (
+                          <ChevronDown
+                            aria-hidden="true"
+                            className="h-5 w-5 rotate-180 text-accent-emerald"
+                          />
+                        )}
                         <span
                           className="text-headline-sm text-accent-emerald rtl:scale-x-[-1]"
                           aria-hidden="true"
@@ -395,6 +435,26 @@ export function Navbar() {
                           ↗
                         </span>
                       </Link>
+                      {id === "products" && (
+                        <ul
+                          aria-label={t("products")}
+                          className="m-0 list-none pb-md pl-2xl rtl:pl-0 rtl:pr-2xl"
+                        >
+                          {productLinks.map(
+                            ({ translationKey: productKey }) => (
+                              <li key={productKey}>
+                                <Link
+                                  href="#"
+                                  className="flex min-h-touch items-center px-md font-body text-body-md text-text-muted no-underline transition-colors hover:text-text-pure focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]"
+                                  onClick={() => setIsMenuOpen(false)}
+                                >
+                                  {t(productKey)}
+                                </Link>
+                              </li>
+                            ),
+                          )}
+                        </ul>
+                      )}
                     </motion.li>
                   ))}
                 </ul>

@@ -16,8 +16,7 @@ import { useRef } from "react";
 import { BrandIdentity } from "@/components/layout/brand-identity";
 import { Link } from "@/i18n/navigation";
 
-// TODO: replace with your real LinkedIn page
-const LINKEDIN_URL = "https://www.linkedin.com/company/your-company";
+const LINKEDIN_URL = "https://www.linkedin.com/company/anansky";
 
 const footerColumns = [
   {
